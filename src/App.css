@@ -12,3 +12,65 @@ header {
   height: 600px;
   background-color: yellow;
 }
+
+footer {
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #000);
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* เส้นเรืองแสงด้านบน */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, #00f7ff, #ff00c8, #00f7ff);
+  background-size: 200% auto;
+  animation: glowLine 3s linear infinite;
+}
+
+/* เอฟเฟกต์พื้นหลังเรืองแสง */
+footer::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,247,255,0.2) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  animation: rotateGlow 10s linear infinite;
+}
+
+footer p {
+  margin: 10px 0;
+  font-size: 16px;
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+footer p:hover {
+  color: #00f7ff;
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Animation เส้นเรืองแสง */
+@keyframes glowLine {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+/* หมุนแสง */
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

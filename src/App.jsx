@@ -5,6 +5,7 @@ import './App.css'
 
 import Navbar from './components/Navbar'
 import Header from './components/Header'
+import Footer from './components/Footer'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -12,6 +13,7 @@ function App() {
     <>
     <Navbar />
     <Header />
+    <Footer />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
